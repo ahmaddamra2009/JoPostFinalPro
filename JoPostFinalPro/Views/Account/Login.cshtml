@@ -1,0 +1,74 @@
+﻿@model User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link href="~/dashboard/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/dashboard/css/styles.css" rel="stylesheet">
+</head>
+<body class="login-bg">
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <h1><a href="#">Users login</a></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-wrapper">
+                    <div class="box">
+                        <div class="content-wrap">
+                            <h6>Sign In</h6>
+                            <div class="social">
+                                <a class="face_login" href="#">
+                                    <span class="face_icon">
+                                        <img src="~/dashboard/images/facebook.png" alt="fb">
+                                    </span>
+                                    <span class="text">Sign in with Facebook</span>
+                                </a>
+                                <div class="division">
+                                    <hr class="left">
+                                    <span>or</span>
+                                    <hr class="right">
+                                </div>
+                            </div>
+                            <form asp-action="Login" asp-controller="Account" method="post">
+                                <input class="form-control" asp-for="UName" placeholder="Enter User Name">
+
+                                <input class="form-control" asp-for="Password" placeholder="Password">
+                                <div class="action">
+
+                                    <input type="submit" name="name" value="Login" class="btn btn-primary signup" />
+                                    <span class="text-danger"> @ViewBag.error</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="already">
+                        <p>Don't have an account yet?</p>
+                        <a href="signup.html">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="~/dashboard/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/dashboard/js/custom.js"></script>
+</body>
+</html>
